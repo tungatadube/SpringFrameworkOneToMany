@@ -1,5 +1,6 @@
 package com.demo.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -102,6 +103,14 @@ public class Instructor {
 		this.courses = courses;
 	}
 
+	public void add(Course tempCourse){
+		if (courses==null){
+			courses= new ArrayList<>();
+		}
+		courses.add(tempCourse);
+		tempCourse.setInstructor(this);
+
+	}
 	
 
 	@Override
